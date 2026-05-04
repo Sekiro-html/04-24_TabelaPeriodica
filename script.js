@@ -1,285 +1,44 @@
+const mapeamento = {};
+
+colecaoElementos.forEach(Elemento => {
+    mapeamento[`${Elemento.linha}-${Elemento.coluna}`] = Elemento;
+
+});
+console.log(mapeamento);
+
 let  table = document.createElement("table");
 let main = document.getElementById("main");
 
 main.appendChild(table);
+table.id = "tabela"
 
-for (let i = 0; i < 10; i++) {
+let linhas = 1;
+let coluna = 1;
+
+for (let l = 1; l < 9; l++) {
     let tr = document.createElement("tr");
 
     table.appendChild(tr);
-    tr.classList.add("Linhas")
+    tr.id = l;
+    tr.classList.add("linhas")
+    console.log(l);
 }
 
-let Linhas = document.querySelectorAll("table tr");
+let tr = document.querySelectorAll(".linhas");
+let tabela = document.getElementById("tabela");
 
-Linhas.forEach ((Linha, index) => {
-    const dados = Linha.querySelectorAll("td");
-    
-    if (index == 0) {
-        Linha.id = "Linha1"
-        
-        for (let i = 0; i < 6; i++) {
-            let td = document.createElement("td");
-            Linha.appendChild(td);
-        }
-
-        const dados = Linha.querySelectorAll("td");
-        let table = document.createElement("table");
-        let thead = document.createElement("thead");
-        let tr = document.createElement("tr");
+tr.forEach((linha, index) => {
+    for(let c = 1; c < 19; c++) {
         let td = document.createElement("td");
-        let th = document.createElement("th");
-        
-        dados[0].classList.add("Elementos");
-        dados[2].colSpan = "10";
-        dados[2].rowSpan = "3";
-        //dados[2].id = "infoTd";
-        dados[2].appendChild(table);
-        table.appendChild(thead)
-        thead.appendChild(tr);
-        tr.appendChild(th);
-        for (let j = 0; j < 4; j++) {
-            table.appendChild(tr);
-            tr.appendChild(td);
-        }
-
-        dados[4].colSpan = "5"
-
-        dados[dados.length - 1].classList.add("Elementos");
-    };
-    console.log(index);
-    if (index == 1) {
-        Linha.id = "Linha2"
-
-        for (let i = 0; i < 10; i++) {
-            let td = document.createElement("td");
-            Linha.appendChild(td);
-        }
-
-        const dados = Linha.querySelectorAll("td");
-
-        dados[0].classList.add("Elementos");
-        dados[1].classList.add("Elementos");
-        dados[3].classList.add("Elementos");
-        dados[4].classList.add("Elementos");
-        dados[5].classList.add("Elementos");
-        dados[6].classList.add("Elementos");
-        dados[7].classList.add("Elementos");
-        dados[8].classList.add("Elementos");
-        
+        linha.appendChild(td);
+        td.id = coluna;
+        console.log(coluna)
+        coluna++;
     }
-
-    if (index == 2) {
-        Linha.id = "Linha3"
-        
-        for (let i = 0; i < 10; i++) {
-            let td = document.createElement("td");
-            Linha.appendChild(td);
-        }
-
-        const dados = Linha.querySelectorAll("td");
-
-        dados[0].classList.add("Elementos");
-        dados[1].classList.add("Elementos");
-        dados[3].classList.add("Elementos");
-        dados[4].classList.add("Elementos");
-        dados[5].classList.add("Elementos");
-        dados[6].classList.add("Elementos");
-        dados[7].classList.add("Elementos");
-        dados[8].classList.add("Elementos");
-        
-    }
-
-    if (index == 3) {
-        Linha.id = "Linha4"
-        
-        for (let i = 0; i < 19; i++) {
-            let td = document.createElement("td");
-            Linha.appendChild(td);
-        }
-
-        const dados = Linha.querySelectorAll("td");
-
-        dados[0].classList.add("Elementos");
-        dados[1].classList.add("Elementos");
-        dados[2].classList.add("Elementos");
-        dados[3].classList.add("Elementos");
-        dados[4].classList.add("Elementos");
-        dados[5].classList.add("Elementos");
-        dados[6].classList.add("Elementos");
-        dados[7].classList.add("Elementos");
-        dados[8].classList.add("Elementos");
-        dados[9].classList.add("Elementos");
-        dados[10].classList.add("Elementos");
-        dados[11].classList.add("Elementos");
-        dados[12].classList.add("Elementos");
-        dados[13].classList.add("Elementos");
-        dados[14].classList.add("Elementos");
-        dados[15].classList.add("Elementos");
-        dados[16].classList.add("Elementos");
-        dados[17].classList.add("Elementos");
-        dados[dados.length - 1].classList.add("Elementos");
-        
-    }
-    
-    if (index == 4) {
-        Linha.id = "Linha5"
-        for (let i = 0; i < 19; i++) {
-            let td = document.createElement("td");
-            Linha.appendChild(td);
-        }
-
-        const dados = Linha.querySelectorAll("td");
-
-        dados[0].classList.add("Elementos");
-        dados[1].classList.add("Elementos");
-        dados[2].classList.add("Elementos");
-        dados[3].classList.add("Elementos");
-        dados[4].classList.add("Elementos");
-        dados[5].classList.add("Elementos");
-        dados[6].classList.add("Elementos");
-        dados[7].classList.add("Elementos");
-        dados[8].classList.add("Elementos");
-        dados[9].classList.add("Elementos");
-        dados[10].classList.add("Elementos");
-        dados[11].classList.add("Elementos");
-        dados[12].classList.add("Elementos");
-        dados[13].classList.add("Elementos");
-        dados[14].classList.add("Elementos");
-        dados[15].classList.add("Elementos");
-        dados[16].classList.add("Elementos");
-        dados[17].classList.add("Elementos");
-        dados[dados.length - 1].classList.add("Elementos");
-        
-    }
-
-    if (index == 5) {
-        Linha.id = "Linha6"
-        for (let i = 0; i < 19; i++) {
-            let td = document.createElement("td");
-            Linha.appendChild(td);
-        }
-
-        const dados = Linha.querySelectorAll("td");
-
-        dados[0].classList.add("Elementos");
-        dados[1].classList.add("Elementos");
-        dados[3].classList.add("Elementos");
-        dados[4].classList.add("Elementos");
-        dados[5].classList.add("Elementos");
-        dados[6].classList.add("Elementos");
-        dados[7].classList.add("Elementos");
-        dados[8].classList.add("Elementos");
-        dados[9].classList.add("Elementos");
-        dados[10].classList.add("Elementos");
-        dados[11].classList.add("Elementos");
-        dados[12].classList.add("Elementos");
-        dados[13].classList.add("Elementos");
-        dados[14].classList.add("Elementos");
-        dados[15].classList.add("Elementos");
-        dados[16].classList.add("Elementos");
-        dados[17].classList.add("Elementos");
-        dados[dados.length - 1].classList.add("Elementos");
-        
-    }
-
-    if (index == 6) {
-        Linha.id = "Linha7"
-        for (let i = 0; i < 19; i++) {
-            let td = document.createElement("td");
-            Linha.appendChild(td);
-        }
-
-        const dados = Linha.querySelectorAll("td");
-
-        dados[0].classList.add("Elementos");
-        dados[1].classList.add("Elementos");
-        dados[3].classList.add("Elementos");
-        dados[4].classList.add("Elementos");
-        dados[5].classList.add("Elementos");
-        dados[6].classList.add("Elementos");
-        dados[7].classList.add("Elementos");
-        dados[8].classList.add("Elementos");
-        dados[9].classList.add("Elementos");
-        dados[10].classList.add("Elementos");
-        dados[11].classList.add("Elementos");
-        dados[12].classList.add("Elementos");
-        dados[13].classList.add("Elementos");
-        dados[14].classList.add("Elementos");
-        dados[15].classList.add("Elementos");
-        dados[16].classList.add("Elementos");
-        dados[17].classList.add("Elementos");
-        dados[dados.length - 1].classList.add("Elementos");
-        
-    }
-
-    if (index == 7) {
-        Linha.id = "Linha4"
-        
-        for (let i = 0; i < 19; i++) {
-            let td = document.createElement("td");
-            Linha.appendChild(td);
-        }
-
-        const dados = Linha.querySelectorAll("td");
-
-        dados[0].id = "espaco";
-        dados[0].colSpan = "18";
-        
-    }
-
-    if (index == 8) {
-        Linha.id = "Linha9"
-        for (let i = 0; i < 16; i++) {
-            let td = document.createElement("td");
-            Linha.appendChild(td);
-        }
-
-        const dados = Linha.querySelectorAll("td");
-        dados[0].colSpan = "3"
-        dados[1].classList.add("Elementos");
-        dados[2].classList.add("Elementos");
-        dados[3].classList.add("Elementos");
-        dados[4].classList.add("Elementos");
-        dados[5].classList.add("Elementos");
-        dados[6].classList.add("Elementos");
-        dados[7].classList.add("Elementos");
-        dados[8].classList.add("Elementos");
-        dados[9].classList.add("Elementos");
-        dados[10].classList.add("Elementos");
-        dados[11].classList.add("Elementos");
-        dados[12].classList.add("Elementos");
-        dados[13].classList.add("Elementos");
-        dados[14].classList.add("Elementos");
-        
-    }
-
-    if (index == 9) {
-        Linha.id = "Linha10"
-        for (let i = 0; i < 16; i++) {
-            let td = document.createElement("td");
-            Linha.appendChild(td);
-        }
-
-        const dados = Linha.querySelectorAll("td");
-        dados[0].colSpan = "3"
-        dados[1].classList.add("Elementos");
-        dados[2].classList.add("Elementos");
-        dados[3].classList.add("Elementos");
-        dados[4].classList.add("Elementos");
-        dados[5].classList.add("Elementos");
-        dados[6].classList.add("Elementos");
-        dados[7].classList.add("Elementos");
-        dados[8].classList.add("Elementos");
-        dados[9].classList.add("Elementos");
-        dados[10].classList.add("Elementos");
-        dados[11].classList.add("Elementos");
-        dados[12].classList.add("Elementos");
-        dados[13].classList.add("Elementos");
-        dados[14].classList.add("Elementos");
-        
-    }
+    coluna = 1;
 })
+
+
 
 let td = document.querySelectorAll(".Elementos");
 
